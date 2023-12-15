@@ -7,6 +7,7 @@ import CompLogin from './pages/paginaLogin.jsx';
 import CompInicial from './pages/paginaInicial.jsx';
 import CompMapa from "./Componentes/mapa.js"
 import CompFoto from "./Componentes/foto.js"
+import CompDetallesEvento from './Componentes/detallesEvento.js';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/inicio" element={<CompInicial/>}/>
         <Route path="/mapa" element={<CompMapa/>}/>
         <Route path="/foto" element={<CompFoto/>}/>
+        <Route path="/evento/:idEvento" element={<CompDetallesEvento/>}/>
       </Routes>
     </BrowserRouter>
   );

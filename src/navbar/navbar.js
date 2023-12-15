@@ -53,10 +53,6 @@ function cerrarSesion () {
         <Nav className="me-auto">
           <Nav.Link href={`/inicio`} className='navbar-link' style={{marginLeft: '10vmin'}}> Home
           </Nav.Link>
-          <Nav.Link href={`/foto`} className='navbar-link' style={{marginLeft: '10vmin'}}> Foto
-          </Nav.Link> 
-          <Nav.Link href={`/mapa`} className='navbar-link' style={{marginLeft: '10vmin'}}> Mapa
-          </Nav.Link> 
         </Nav>
         <NavItem>{(nombreUsuario!='')? (nombreUsuario) : "Hola" }</NavItem>
         <Nav>

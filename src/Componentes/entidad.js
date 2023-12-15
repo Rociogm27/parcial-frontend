@@ -138,7 +138,7 @@ useEffect(() => {
                             <b>Organizador:</b> {entidad.organizador} 
                             </p>
                             <p>
-                            <b>Detalles:</b> {entidad._id} 
+                            <b>Detalles:</b> <a href={`/evento/${entidad._id} `} className='btn btn-secondary'>Ver mas informacion</a>
                             </p>
                         </li>
                         ))}
