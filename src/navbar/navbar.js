@@ -46,23 +46,34 @@ function cerrarSesion () {
       // Redirige a /login
   window.location.href = '/login';
 }
-    return (
-      <Navbar expand="lg" className="navbar">
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav" className='navbar-collapse'>
-        <Nav className="me-auto">
-          <Nav.Link href={`/inicio`} className='navbar-link' style={{marginLeft: '10vmin'}}> Home
-          </Nav.Link>
-        </Nav>
-        <NavItem>{(nombreUsuario!='')? (nombreUsuario) : "Hola" }</NavItem>
-        <Nav>
-            <NavDropdown drop='start' className='me-3' title={<img src={foto} style={{ width: '6vh', borderRadius: '50%' }} alt="" />} id="basic-nav-dropdown">
-            <NavDropdown.Item href="/" onClick={cerrarSesion}>Cerrar sesión</NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  );
-  }
+const styles = {
+  navbar: {
+    backgroundColor: '#333333', // Fondo gris oscuro
+    color: '#000000', // Color de texto negro
+  },
+  navLink: {
+    marginLeft: '10vmin',
+    color: '#ffffff ', // Color de texto negro
+  },
+  };
+
+return (
+  <Navbar expand="lg" className="navbar" style={styles.navbar}>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav" className='navbar-collapse'>
+      <Nav className="me-auto">
+        <Nav.Link href={`/inicio`} className='navbar-link' style={styles.navLink}> Home </Nav.Link>
+      </Nav>
+      <NavItem style={styles.navLink}>{(nombreUsuario !== '') ? (nombreUsuario) : "Hola" }</NavItem>
+      <Nav>
+        <NavDropdown drop='start' className='me-3' title={<img src={foto} style={{ width: '6vh', borderRadius: '50%' }} alt="" />} id="basic-nav-dropdown">
+          <NavDropdown.Item href="/" onClick={cerrarSesion}>Cerrar sesión</NavDropdown.Item>
+        </NavDropdown>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>
+);
+};
+
 
   export default NavbarPage;
