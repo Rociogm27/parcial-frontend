@@ -66,3 +66,8 @@
   width: 90%;
   margin-right: 2%;
 }
+
+.small-image {
+  max-width: 100px; /* Ajusta el ancho máximo según tu preferencia */
+  max-height: 100px; /* Ajusta la altura máxima según tu preferencia */
+}

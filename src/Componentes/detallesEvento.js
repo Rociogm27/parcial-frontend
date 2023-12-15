@@ -4,34 +4,26 @@ import { useParams, Link } from 'react-router-dom';
 import CompFoto from './foto';
 
 const CompDetallesEvento = () => {
-    const {idEvento} = useParams()
+    const {idEntidad} = useParams()
 
-    const [evento, setEvento] = useState({})
+    const [entidad, setEntidad] = useState([]); 
+    useEffect( () => {getEntidad()}, []);
 
-    useEffect(() => {
-        getEvento()
-    }, [])
-
-    const getEvento = async () => {
-        try {
-            // Hacer la solicitud para obtener productos desde el backend
-            const response = await fetch(`ttps://parcial-backend-rociogm27s-projects.vercel.app/entidades/${idEvento}`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
-            if (response.ok) {
-                // Manejar la respuesta exitosa, redirigir o realizar otras acciones según sea necesario
-                console.log('Evento obtenido con éxito');
-                const data = await response.json();
-                setEvento(data);
-            } else {
-                console.error('Error al obtener el evento:', response.statusText);
-            }
-        } catch (error) {
-            console.error('Error al obtener el evento:', error);
-        }
+    const getEntidad = async () => {
+        fetch(`https://parcial-backend-rociogm27s-projects.vercel.app/entidades/${idEntidad}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then(response => response.json())
+        .then(data => {
+            setEntidad(data);
+            console.log("entidad encontrado")
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error al obtener la entidad:', error);
+        })
     }
 
     
@@ -51,19 +43,21 @@ const CompDetallesEvento = () => {
           padding: '20px', // Espaciado interno
           borderRadius: '8px', // Borde redondeado
         },
+        
       };
 
     return (
         <div style={styles.container}>
           <h1 style={styles.title}>Detalles del producto</h1>
           <div style={styles.detailsContainer}>
-            <p>Nombre: {evento.nombre}</p>
-            <p>Fecha: {evento.timestamp}</p>
-            <p>Lugar: {evento.lugar}</p>
-            <p>Lat: {evento.lat}</p>
-            <p>Lon: {evento.lon}</p>
-            <p>Organizador: {evento.organizador}</p>
-            <p>Foto: {evento.foto}</p>
+            <p>Nombre:</p> {entidad.nombre}
+            <p>Fecha :</p> {entidad.timestamp}
+            <p>Lugar: </p> {entidad.lugar}
+            <p>Lat: </p> {entidad.lat}
+            <p>Lon: </p> {entidad.lon}
+            <p>Organizador: </p> {entidad.organizador}
+            <p>Foto: </p> <img src={entidad.foto} alt="" className="card-img-top img-fluid" />
+            
           </div>
           <div>
           <CompFoto/>

@@ -18,7 +18,7 @@ function App() {
         <Route path="/inicio" element={<CompInicial/>}/>
         <Route path="/mapa" element={<CompMapa/>}/>
         <Route path="/foto" element={<CompFoto/>}/>
-        <Route path="/evento/:idEvento" element={<CompDetallesEvento/>}/>
+        <Route path="/evento/:idEntidad" element={<CompDetallesEvento/>}/>
       </Routes>
     </BrowserRouter>
   );
