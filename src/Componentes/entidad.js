@@ -14,7 +14,7 @@ const CompEntidades = () => {
             },
         }).then(response => response.json())
         .then(data => {
-            setEntidad(data);
+            setEntidades(data);
             console.log("usuario encontrado")
             console.log(data);
         })
@@ -24,12 +24,11 @@ const CompEntidades = () => {
     }
     const [nombreUsuario,setNombreUsuario]=useState('')
 
-  useEffect(() => {
+useEffect(() => {
     if(localStorage.getItem('objetoToken')!=undefined){
-      comprobarConexion()
-      setNombreUsuario(JSON.parse(localStorage.getItem('objetoToken')).correo)
+    setNombreUsuario(JSON.parse(localStorage.getItem('objetoToken')).correo)
     } else {
-      setNombreUsuario("Usuario no registrado")
+    setNombreUsuario("Usuario no registrado")
     }
 }, []);
 
@@ -114,7 +113,7 @@ const CompEntidades = () => {
                     placeholder="Fecha"
                     required
                 />
-                <button className="botonBusqueda col 1" type="submit">Pujar</button>
+                <button className="botonBusqueda col 1" type="submit">Crear evento</button>
             </form>
             </div>
             ): (
@@ -125,7 +124,7 @@ const CompEntidades = () => {
             <div>
 
             </div>
-        <b style={{marginLeft: '10%'}}>Eventos:</b> {fechaFormateada}
+        <b style={{marginLeft: '10%'}}>Eventos:</b> 
             <div class="card" style={{width: '70%', marginLeft: '10%'}}>
                 <div class="card body">
                     {Array.isArray(entidadades) && entidadades.length > 0 ? (
@@ -145,7 +144,7 @@ const CompEntidades = () => {
                         ))}
                     </ul>
                     ) : (
-                    <p>No hay pujas.</p>
+                    <p>No hay eventos.</p>
                     )}
                 </div>
         </div>

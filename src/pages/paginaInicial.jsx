@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import NavbarPage from "../navbar/navbar.js";
 import CompFoto from "../Componentes/foto.js"
 import CompMapa from '../Componentes/mapa.js';
+import CompEntidades from '../Componentes/entidad.js';
 
 const PaginaInicial = () => {
     const styles = {
@@ -33,7 +34,16 @@ const PaginaInicial = () => {
               </div>
             </div>
             
+          </div >
+          <div className="row">
+            <div className="col 6">
+            <CompEntidades></CompEntidades>
+              </div>
+              <div className="col 6">
+            <CompMapa></CompMapa>
+              </div>
           </div>
+          
         </div>
       );
       
