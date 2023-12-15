@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import NavbarPage from "../navbar/navbar.js";
 import CompFoto from "../Componentes/foto.js"
+import CompMapa from '../Componentes/mapa.js';
 
 const PaginaInicial = () => {
     const styles = {
@@ -12,8 +13,8 @@ const PaginaInicial = () => {
           width: 'fit-content', // Ajusta el ancho al contenido
           margin: '20px auto', // Centra el cuadro horizontalmente y agrega un margen superior e inferior
         },
-      };
-      
+    };
+    
     return (
         <div>
           <NavbarPage />
@@ -31,6 +32,7 @@ const PaginaInicial = () => {
                 )}
               </div>
             </div>
+            
           </div>
         </div>
       );

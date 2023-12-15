@@ -51,3 +51,18 @@
   padding: 20px; /* Espaciado interno */
   box-sizing: border-box; /* Incluir el tamaño del borde en el tamaño total */
 }
+
+.botonBusquedaBig {
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 80%;
+  border: #282c34 2px solid;
+  background-color: #9DB2BF;
+  border-radius: 1vmin;
+}
+
+.barrabusquedabig {
+  height: 5vmin;
+  width: 90%;
+  margin-right: 2%;
+}
