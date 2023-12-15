@@ -83,7 +83,7 @@ const CompMapa = () => {
 
     const mostrarMapa = () => {
         if(!ubicacionCargada) {
-            fetch('http://localhost:4000/paradas/ubicacion/', {
+            fetch('https://parcial-backend-rociogm27s-projects.vercel.app/paradas/ubicacion/', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

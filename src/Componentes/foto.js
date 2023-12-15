@@ -9,7 +9,7 @@ const CompFoto = () => {
     useEffect( () => {getEntidad()}, []);
 
     const getEntidad = async () => {
-        fetch(`http://localhost:4000/entidades/${idEntidad}`, {
+        fetch(`https://parcial-backend-rociogm27s-projects.vercel.app/entidades/${idEntidad}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const CompFoto = () => {
             var formdata = new FormData();
             formdata.append("foto", archivo);
     
-            fetch('http://localhost:4000/entidades/subirFoto', {
+            fetch('https://parcial-backend-rociogm27s-projects.vercel.app/entidades/subirFoto', {
                     method: 'POST',
                     body : formdata
                 }).then(response => response.json())
@@ -44,7 +44,7 @@ const CompFoto = () => {
                             "foto" : result.imageUrl
                           });
                         console.log(result.imageUrl)
-                        fetch(`http://localhost:4000/entidades/${idEntidad}`, {
+                        fetch(`https://parcial-backend-rociogm27s-projects.vercel.app/entidades/${idEntidad}`, {
                             method: 'PUT',
                             headers: {
                                 'Content-Type': 'application/json',

@@ -32,7 +32,7 @@ const CompLogin = () => {
 
     function handleCallBackResponse (response){
         console.log("Encode JWT: "+  response.credential)
-        fetch(`http://localhost:4000/loginToken/${response.credential}`, {
+        fetch(`https://parcial-backend-rociogm27s-projects.vercel.app/loginToken/${response.credential}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

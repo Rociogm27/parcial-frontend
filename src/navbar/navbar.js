@@ -21,7 +21,7 @@ function NavbarPage(props) {
 
 const comprobarConexion = async () => {
   // console.log(JSON.parse(localStorage.getItem('objetoToken')).tokenId)
-  fetch(`http://localhost:4000/conexion/${JSON.parse(localStorage.getItem('objetoToken')).tokenId}/${JSON.parse(localStorage.getItem('objetoToken')).tokenCompleto}`, {
+  fetch(`https://parcial-backend-rociogm27s-projects.vercel.app/conexion/${JSON.parse(localStorage.getItem('objetoToken')).tokenId}/${JSON.parse(localStorage.getItem('objetoToken')).tokenCompleto}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
