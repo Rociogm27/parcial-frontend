@@ -42,7 +42,7 @@ const CompFoto = () => {
                     .then(result =>{
                         var raw = JSON.stringify({
                             "foto" : result.imageUrl
-                          });
+                        });
                         console.log(result.imageUrl)
                         fetch(`https://parcial-backend-rociogm27s-projects.vercel.app/entidades/${idEntidad}`, {
                             method: 'PUT',

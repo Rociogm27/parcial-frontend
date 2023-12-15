@@ -13,12 +13,13 @@ const PaginaInicial = () => {
                     <div className="col">
                         {localStorage.getItem('objetoToken') != undefined ? 
                         <h2> Bienvenido {JSON.parse(localStorage.getItem('objetoToken')).correo}</h2> :
-                        <h2> Bienvenido invitado</h2>
+                        <h2> Bienvenido, usuario no registrado</h2>
                         }
                     </div>
                 </div>
             </div>
         </div>
+        
     )
 }
 

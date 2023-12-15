@@ -13,7 +13,7 @@ function NavbarPage(props) {
       setNombreUsuario(JSON.parse(localStorage.getItem('objetoToken')).correo)
       setFoto(JSON.parse(localStorage.getItem('objetoToken')).foto)
     } else {
-      setNombreUsuario("Invitado")
+      setNombreUsuario("Usuario no registrado")
       setFoto('http://res.cloudinary.com/dekrjaaxf/image/upload/v1702643004/zmkh2ucj3vrf0gq8pn6m.png')
     }
 }, []);
@@ -61,8 +61,6 @@ function cerrarSesion () {
         <NavItem>{(nombreUsuario!='')? (nombreUsuario) : "Hola" }</NavItem>
         <Nav>
             <NavDropdown drop='start' className='me-3' title={<img src={foto} style={{ width: '6vh', borderRadius: '50%' }} alt="" />} id="basic-nav-dropdown">
-            <NavDropdown.Item href={`/myUserInfo/`}>Ver mi perfil</NavDropdown.Item>
-            <NavDropdown.Divider />
             <NavDropdown.Item href="/" onClick={cerrarSesion}>Cerrar sesión</NavDropdown.Item>
           </NavDropdown>
         </Nav>
